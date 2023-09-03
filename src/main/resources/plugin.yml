@@ -1,0 +1,7 @@
+name: CircleParticle
+version: '${project.version}'
+main: me.bubbles.circleparticle.CircleParticle
+api-version: '1.20'
+commands:
+  circle:
+    usage: /<command>
