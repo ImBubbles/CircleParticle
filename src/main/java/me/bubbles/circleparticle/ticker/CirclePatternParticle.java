@@ -8,25 +8,25 @@ import org.bukkit.entity.Player;
 public class CirclePatternParticle extends Timer {
 
     private int degree;
-    private int rate;
+    private int change;
     private double radius;
     private Player player;
     private Particle particle;
 
-    public CirclePatternParticle(CircleParticle plugin, Particle particle, Player player, int speed, int rate, double radius) {
+    public CirclePatternParticle(CircleParticle plugin, Particle particle, Player player, int speed, int change, double radius) {
         super(plugin, speed);
         this.player=player;
         this.radius=radius;
         this.degree=0;
         this.particle=particle;
-        this.rate=rate;
+        this.change=change;
     }
 
     @Override
     public void onComplete() {
         super.onComplete();
         player.spawnParticle(particle, getNextLocation(), 1);
-        degree=degree+rate;
+        degree=degree+change;
         restart();
     }
 
